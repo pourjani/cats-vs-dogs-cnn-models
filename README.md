@@ -108,7 +108,7 @@ GPU training is recommended for this model.
 
 | Model            | Batch Size | Epochs | Optimizer                   | Loss                  | Callbacks                                    |
 |------------------|------------|--------|-----------------------------|-----------------------|----------------------------------------------|
-| Baseline CNN     | 32         | 5      | Adam                        | Binary Crossentropy    | None or basic callbacks                       |
+| Baseline CNN     | 32         | 5      | Adam                        | Binary Crossentropy    | None                        |
 | Ultra-Light CNN  | 8          | 20     | Adam (lr=0.0005)            | Binary Crossentropy    | EarlyStopping, ReduceLROnPlateau              |
 | Heavy Residual SE| 32         | 25     | Adam                        | Binary Crossentropy    | EarlyStopping, ReduceLROnPlateau, LR Scheduler|
 
