@@ -4,7 +4,7 @@
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
 ![Keras](https://img.shields.io/badge/Keras-Deep%20Learning-red)
 ![Deep Learning](https://img.shields.io/badge/DeepLearning-CNN-green)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
 
 A deep learning project that explores and compares multiple **Convolutional Neural Network (CNN)** architectures for **binary image classification** using the classic **Cats vs Dogs** dataset.
 
