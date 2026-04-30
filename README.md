@@ -101,8 +101,6 @@ Accuracy
 - EarlyStopping  
 - ReduceLROnPlateau  
 
-These techniques help stabilize training and reduce overfitting.
-
 ---
 
 # 🧰 Technologies Used
@@ -115,3 +113,6 @@ These techniques help stabilize training and reduce overfitting.
 - Scikit‑learn  
 
 ---
+# 📊 Dataset
+
+The project uses the **Dogs vs Cats** dataset from **Kaggle**
