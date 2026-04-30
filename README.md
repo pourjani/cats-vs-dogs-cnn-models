@@ -1,73 +1,75 @@
-# cats-vs-dogs-cnn-models
-This project implements multiple Convolutional Neural Network (CNN) architectures for classifying images of cats and dogs using TensorFlow/Keras.
-The goal of this project is to compare different CNN designs from a simple baseline model to more advanced architectures.
+# 🐱🐶 Cats vs Dogs CNN Models
+
+This repository contains multiple Convolutional Neural Network (CNN) architectures for binary image classification — identifying whether an image shows a **cat** or a **dog** using TensorFlow and Keras.
+
+The project focuses on comparing different CNN designs from a simple baseline model to more advanced architectures.
+## 🧠 Model Descriptions
+
+### 1️⃣ Baseline CNN  
+**File:** `cats_vs_dogs_cnn_baseline`
+
+A simple CNN used as a reference model.
+
+**Highlights**
+- Basic Conv2D + MaxPooling layers  
+- Dense output with Sigmoid activation  
+- Easy to understand and modify  
+
+**Performance**
+- Accuracy: ~65–75%  
+- Runs efficiently on CPU  
 
 ---
 
-## Models Included
+### 2️⃣ Ultra-Light CNN (Mini SE)  
+**File:** `cats_dogs_ultralight_cnn_mini_se`
 
-### 1. Baseline CNN
-File: `cats_vs_dogs_cnn_baseline.ipynb`
+A lightweight CNN designed for efficient training on systems with limited hardware resources.
 
-A simple convolutional neural network used as a starting point for the classification task.
+**Highlights**
+- SeparableConv2D layers for faster computation  
+- Mini Squeeze-and-Excitation (SE) attention block  
+- GlobalAveragePooling  
+- Dropout for regularization  
 
-Features:
-- Basic Conv2D + MaxPooling layers
-- Simple architecture
-- Good for understanding the fundamentals
-
-Expected accuracy:
-~65–75%
-
-Runs well on:
-CPU
+**Performance**
+- Accuracy: ~60–70%  
+- Optimized for CPU usage  
 
 ---
 
-### 2. Ultra-Light CNN (Mini SE)
-File: `cats_dogs_ultralight_cnn_mini_se.ipynb`
+### 3️⃣ Heavy Residual CNN (SE)  
+**File:** `cats_dogs_heavy_residual_se_cnn`
 
-A lightweight CNN designed to run efficiently on CPU with minimal resource usage.
+An advanced CNN architecture that integrates **Residual connections** and **Squeeze-and-Excitation (SE)** blocks for improved feature learning.
 
-Features:
-- SeparableConv layers
-- Lightweight architecture
-- Small model size
-- CPU friendly
+**Highlights**
+- Residual blocks  
+- SE attention modules  
+- BatchNormalization  
+- Dropout  
 
-Expected accuracy:
-~60–70%
-
-Runs well on:
-Low-end laptops and CPUs
+**Performance**
+- Accuracy: ~85–90%  
+- GPU recommended for faster training  
 
 ---
 
-### 3. Heavy Residual SE CNN
-File: `cats_dogs_heavy_residual_se_cnn.ipynb`
+## ⚙️ Training Configuration
 
-A more advanced deep CNN architecture that includes Residual connections and Squeeze-and-Excitation (SE) blocks.
-
-Features:
-- Residual connections
-- SE attention blocks
-- Deeper architecture
-- Higher representational power
-
-Expected accuracy:
-~85–90%
-
-Recommended hardware:
-GPU (may run slowly on CPU)
+- **Loss:** Binary Crossentropy  
+- **Optimizer:** Adam  
+- **Metric:** Accuracy  
+- **Callbacks:** EarlyStopping, ReduceLROnPlateau  
 
 ---
 
-## Technologies Used
+## 🔬 Technologies Used
 
-- Python
-- TensorFlow
-- Keras
-- NumPy
-- Matplotlib
+- Python  
+- TensorFlow  
+- Keras  
+- NumPy  
+- Matplotlib  
 
 ---
