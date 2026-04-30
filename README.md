@@ -1,75 +1,117 @@
 # 🐱🐶 Cats vs Dogs CNN Models
 
-This repository contains multiple Convolutional Neural Network (CNN) architectures for binary image classification — identifying whether an image shows a **cat** or a **dog** using TensorFlow and Keras.
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
+![Keras](https://img.shields.io/badge/Keras-Deep%20Learning-red)
+![Deep Learning](https://img.shields.io/badge/DeepLearning-CNN-green)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-The project focuses on comparing different CNN designs from a simple baseline model to more advanced architectures.
-## 🧠 Model Descriptions
+A deep learning project that explores and compares multiple **Convolutional Neural Network (CNN)** architectures for **binary image classification** using the classic **Cats vs Dogs** dataset.
 
-### 1️⃣ Baseline CNN  
-**File:** `cats_vs_dogs_cnn_baseline`
-
-A simple CNN used as a reference model.
-
-**Highlights**
-- Basic Conv2D + MaxPooling layers  
-- Dense output with Sigmoid activation  
-- Easy to understand and modify  
-
-**Performance**
-- Accuracy: ~65–75%  
-- Runs efficiently on CPU  
+The repository focuses on experimenting with different CNN designs ranging from a **simple baseline model** to **lightweight optimized networks** and **advanced architectures using Residual connections and Squeeze‑and‑Excitation attention**.
 
 ---
 
-### 2️⃣ Ultra-Light CNN (Mini SE)  
-**File:** `cats_dogs_ultralight_cnn_mini_se`
+# 📌 Project Goal
 
-A lightweight CNN designed for efficient training on systems with limited hardware resources.
+The purpose of this project is to study how different CNN architectures affect:
 
-**Highlights**
-- SeparableConv2D layers for faster computation  
-- Mini Squeeze-and-Excitation (SE) attention block  
+- Model accuracy  
+- Training stability  
+- Computational efficiency  
+- Hardware requirements  
+
+The models demonstrate the trade‑off between **simplicity, efficiency, and performance** in deep learning image classifiers.
+
+---
+
+# 🧠 Implemented Models
+
+## 1️⃣ Baseline CNN
+
+A simple convolutional neural network used as a reference architecture.
+
+**Key components**
+
+- Conv2D layers  
+- MaxPooling layers  
+- Dense classifier  
+- Sigmoid output for binary classification  
+
+**Accuracy**
+
+~65% – 75%
+
+---
+
+## 2️⃣ Ultra‑Light CNN (Mini SE)
+
+A lightweight architecture designed for training on **CPU or low‑resource systems**.
+
+**Key components**
+
+- SeparableConv2D layers  
+- Mini Squeeze‑and‑Excitation attention block  
 - GlobalAveragePooling  
-- Dropout for regularization  
+- Dropout regularization  
 
-**Performance**
-- Accuracy: ~60–70%  
-- Optimized for CPU usage  
+**Accuracy**
+
+~60% – 70%
 
 ---
 
-### 3️⃣ Heavy Residual CNN (SE)  
-**File:** `cats_dogs_heavy_residual_se_cnn`
+## 3️⃣ Heavy Residual CNN (SE)
 
-An advanced CNN architecture that integrates **Residual connections** and **Squeeze-and-Excitation (SE)** blocks for improved feature learning.
+An advanced CNN architecture designed for better feature extraction and higher accuracy.
 
-**Highlights**
-- Residual blocks  
-- SE attention modules  
+**Key components**
+
+- Residual connections  
+- Squeeze‑and‑Excitation (SE) blocks  
 - BatchNormalization  
-- Dropout  
+- Dropout regularization  
+- Deeper convolutional layers  
 
-**Performance**
-- Accuracy: ~85–90%  
-- GPU recommended for faster training  
+**Accuracy**
+
+~85% – 90%
+
+GPU training is recommended for this model.
+
+
+# ⚙️ Training Configuration
+
+Typical training setup used in the models:
+
+**Loss Function**
+
+Binary Crossentropy
+
+**Optimizer**
+
+Adam
+
+**Metric**
+
+Accuracy
+
+**Callbacks**
+
+- EarlyStopping  
+- ReduceLROnPlateau  
+
+These techniques help stabilize training and reduce overfitting.
 
 ---
 
-## ⚙️ Training Configuration
-
-- **Loss:** Binary Crossentropy  
-- **Optimizer:** Adam  
-- **Metric:** Accuracy  
-- **Callbacks:** EarlyStopping, ReduceLROnPlateau  
-
----
-
-## 🔬 Technologies Used
+# 🧰 Technologies Used
 
 - Python  
 - TensorFlow  
 - Keras  
 - NumPy  
 - Matplotlib  
+- Scikit‑learn  
 
 ---
