@@ -5,7 +5,6 @@
 ![Keras](https://img.shields.io/badge/Keras-Deep%20Learning-red)
 ![Deep Learning](https://img.shields.io/badge/DeepLearning-CNN-green)
 
-
 A deep learning project that explores and compares multiple **Convolutional Neural Network (CNN)** architectures for **binary image classification** using the classic **Cats vs Dogs** dataset.
 
 The repository focuses on experimenting with different CNN designs ranging from a **simple baseline model** to **lightweight optimized networks** and **advanced architectures using Residual connections and Squeeze‑and‑Excitation attention**.
@@ -38,6 +37,14 @@ A simple convolutional neural network used as a reference architecture.
 - Dense classifier  
 - Sigmoid output for binary classification  
 
+**Training configuration**
+
+- Batch size: 32  
+- Epochs: 5  
+- Optimizer: Adam  
+- Loss: Binary Crossentropy  
+- Validation: Using validation data generator  
+
 **Accuracy**
 
 ~65% – 75%
@@ -51,13 +58,22 @@ A lightweight architecture designed for training on **CPU or low‑resource syst
 **Key components**
 
 - SeparableConv2D layers  
-- Mini Squeeze‑and‑Excitation attention block  
+- Mini Squeeze‑and‑Excitation (SE) attention block  
 - GlobalAveragePooling  
 - Dropout regularization  
+- Input image size: 96×96  
+
+**Training configuration**
+
+- Batch size: 8  
+- Epochs: 20  
+- Optimizer: Adam (learning rate=0.0005)  
+- Loss: Binary Crossentropy  
+- Validation data used  
 
 **Accuracy**
 
-~60% – 70%
+Approximately validation accuracy reaches around 61% by epoch 4 (improving through training).
 
 ---
 
@@ -73,33 +89,28 @@ An advanced CNN architecture designed for better feature extraction and higher a
 - Dropout regularization  
 - Deeper convolutional layers  
 
+**Training configuration**
+
+- Epochs: 25  
+- Uses callbacks: EarlyStopping, ReduceLROnPlateau, LearningRateScheduler  
+- Optimizer and loss typical to binary classification (Adam optimizer assumed)  
+- Validation data and advanced LR scheduling  
+
 **Accuracy**
 
 ~85% – 90%
 
 GPU training is recommended for this model.
 
+---
 
-# ⚙️ Training Configuration
+# ⚙️ Training Configuration Summary
 
-Typical training setup used in the models:
-
-**Loss Function**
-
-Binary Crossentropy
-
-**Optimizer**
-
-Adam
-
-**Metric**
-
-Accuracy
-
-**Callbacks**
-
-- EarlyStopping  
-- ReduceLROnPlateau  
+| Model            | Batch Size | Epochs | Optimizer                   | Loss                  | Callbacks                                    |
+|------------------|------------|--------|-----------------------------|-----------------------|----------------------------------------------|
+| Baseline CNN     | 32         | 5      | Adam                        | Binary Crossentropy    | None or basic callbacks                       |
+| Ultra-Light CNN  | 8          | 20     | Adam (lr=0.0005)            | Binary Crossentropy    | EarlyStopping, ReduceLROnPlateau (typical)  |
+| Heavy Residual SE| -          | 25     | Adam (assumed)              | Binary Crossentropy    | EarlyStopping, ReduceLROnPlateau, LR Scheduler|
 
 ---
 
@@ -110,9 +121,18 @@ Accuracy
 - Keras  
 - NumPy  
 - Matplotlib  
-- Scikit‑learn  
+- Scikit-learn  
 
 ---
+
 # 📊 Dataset
 
-The project uses the **Dogs vs Cats** dataset from **Kaggle**
+The project uses the **Dogs vs Cats** dataset from **Kaggle**.
+
+Typical preprocessing uses TensorFlow’s `ImageDataGenerator` with rescaling and binary label mode.
+
+---
+
+Feel free to explore each notebook for detailed architecture and training code.
+
+---
