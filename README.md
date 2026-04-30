@@ -109,8 +109,8 @@ GPU training is recommended for this model.
 | Model            | Batch Size | Epochs | Optimizer                   | Loss                  | Callbacks                                    |
 |------------------|------------|--------|-----------------------------|-----------------------|----------------------------------------------|
 | Baseline CNN     | 32         | 5      | Adam                        | Binary Crossentropy    | None or basic callbacks                       |
-| Ultra-Light CNN  | 8          | 20     | Adam (lr=0.0005)            | Binary Crossentropy    | EarlyStopping, ReduceLROnPlateau (typical)  |
-| Heavy Residual SE| -          | 25     | Adam (assumed)              | Binary Crossentropy    | EarlyStopping, ReduceLROnPlateau, LR Scheduler|
+| Ultra-Light CNN  | 8          | 20     | Adam (lr=0.0005)            | Binary Crossentropy    | EarlyStopping, ReduceLROnPlateau              |
+| Heavy Residual SE| 32         | 25     | Adam                        | Binary Crossentropy    | EarlyStopping, ReduceLROnPlateau, LR Scheduler|
 
 ---
 
@@ -133,6 +133,3 @@ Typical preprocessing uses TensorFlow’s `ImageDataGenerator` with rescaling an
 
 ---
 
-Feel free to explore each notebook for detailed architecture and training code.
-
----
